@@ -45,6 +45,7 @@
 
       <section id="results">
         <h2>Results and Discussion</h2>
+        <h3>SVM Model</h3>
         <figure>
             <img src="assets/SVM65.png" alt="Confusion Matrix for 65% Retained Varience">
             <figcaption>Figure 1: Confusion Matrix for 65% Retained Variance -    71.76% Accuracy </figcaption>
@@ -57,14 +58,13 @@
             <img src="assets/SVM95.png" alt="Confusion Matrix for 95% Retained Varience">
             <figcaption>Figure 3: Confusion Matrix for 95% Retained Variance -    80.95% Accuracy</figcaption>
         </figure>
-        <p>ANALYSIS: The results of the first model of SVM using Image Resizing and PCA to preprocess the data shows promising results, however for the use of AI Image 
-        detection it would prove to be more desireable if accuracy for the model was higher in the 90% range. Currently with 90% of retained
-        varience with PCA, we are achieving accuracy around 80%.</p>
         <figure>
             <img src="assets/SVMaccuracy.png" alt="Accuracy vs Varience">
             <figcaption>Figure 4: Accuracy vs Retained Variance Graph</figcaption>
         </figure>
-
+        <p>ANALYSIS: The results of the first model of SVM using Image Resizing and PCA to preprocess the data shows promising results, however, this model takes a long time 
+          to train, especially for higher retained variances. Currently, with 95% of retained variance with PCA, we are achieving an accuracy of around 81%.</p>
+        <h3>Random Forest Model</h3>
         <figure>
             <img src="assets/RF65.png" alt="Confusion Matrix for 65% Retained Varience">
             <figcaption>Figure 5: Confusion Matrix for 65% Retained Variance -    71.40% Accuracy </figcaption>
@@ -81,6 +81,11 @@
             <img src="assets/RFaccuracy.png" alt="Accuracy vs Varience">
             <figcaption>Figure 8: Accuracy vs Retained Variance Graph</figcaption>
         </figure>
+        <p>ANALYSIS: The results of the second model of RF using Image Resizing and PCA to preprocess the data show less promising results. The accuracy values were lower than 
+          compared to SVM. The spike in the accuracy at 100% retained variance can be attributed to the exponentially greater amount of features being inputted. This allows the RF model to have
+          more options of features when choosing the random subset. This leads to the higher accuracy. RF models are good for classification but not good for image data.
+          Currently, with 95% of retained variance with PCA, we are achieving an accuracy of around 74.6%. However, the training time was much lower, even for higher retained variances.</p>
+        <h3>CNN Model</h3>
         <figure>
             <img src="assets/CNN65.png" alt="Confusion Matrix for 65% Retained Varience">
             <figcaption>Figure 9: Confusion Matrix for 65% Retained Variance -    70.67% Accuracy </figcaption>
@@ -97,7 +102,11 @@
             <img src="assets/CNNaccuracy.png" alt="Accuracy vs Varience">
             <figcaption>Figure 12: Accuracy vs Retained Variance Graph</figcaption>
         </figure>
-        <figure>
+        <p>ANALYSIS: The results of the third model of CNN using Image Resizing and PCA to preprocess the data shows good results. The accuracies are at the level of the SVM model. However, in
+          contrast to SVM, the CNN model had lower training times. The drop in accuracy at 100% retained variance is due to the greater amount of features present that
+          don't give useful information. This can be attributed as noise which doesn't help a CNN. Currently, with 95% of retained variance with PCA, we are achieving an accuracy of around 81%.</p>
+        <h3>Cross Model Comparisons</h3>
+         <figure>
           <img src="assets/output1.png" alt="Features vs Variance">
           <figcaption>Figure 13: Number of Features vs Retained Variance Graph</figcaption>
       </figure>
@@ -105,9 +114,10 @@
           <img src="assets/compare.png" alt="Comparison">
           <figcaption>Figure 14: Comparison of 3 models </figcaption>
       </figure>
-        <p>NEXT STEPS: Our next steps for this project will be to impelment a seccond and third version of the model. We will look to possibly implement 
-        different data preprocessing methods and see if we achieve a better accuracy. We also want to look into other supervised learning methods such as Naive Bayes
-        or Neural Networks. These will be implemented and then we will compare results to identify which provide the best results.</p>
+        <p>ANALYSIS: Comparing all three models shows how SVM and CNN outperformed the RF model. When comparing SVM and CNN, during our implementation it was clear that CNN took a shorter training time.
+        This can prove useful when dealing with large datasets and needing to work quickly</p>
+        <p>NEXT STEPS: Our next steps for this project will be to add a different data preprocessing method to see if that could improve our accuracy to reach higher values. Also, it would be interesting
+          to see if we could use a different data set to train to see if better results will emerge..</p>
       </section>
 
       <section id="references">
