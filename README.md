@@ -4,6 +4,8 @@ Georgia Tech Machine Learning group project. Uses taught and researched ML algor
 
 /docs/: Website Files
 
+/backend/: Files for Web App Backend
+
 /Model/archive/: Labeled Data Split into Test and Train
 
 /Model/Preprocessing.ipynb/: Preprocessing Implementation

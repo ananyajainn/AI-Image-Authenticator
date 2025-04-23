@@ -50,7 +50,7 @@
   </footer>
 
   <script>
-
+    const API_URL = 'https://deepfake-backend-f8qb.onrender.com/predict';
     const modelSelect = document.getElementById("modelSelect");
     const fileInput     = document.getElementById("fileInput");
     const goBtn         = document.getElementById("goBtn");
@@ -73,7 +73,7 @@
       fd.append('image', selectedFile);
       fd.append('type', modelSelect.value);
 
-      fetch('/predict', { method: 'POST', body: fd })
+      fetch(API_URL, { method: 'POST', body: fd })
         .then(async res => {
           const data = await res.json().catch(_ => null);
 
